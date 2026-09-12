@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="t d">
+<title id="t">Ruhige Berg- und Seenlandschaft</title>
+<desc id="d">Reduzierte Landschaftsillustration mit Bergen, See und Steg in gedeckten Blau- und Sandtönen.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfe9ef"/><stop offset="1" stop-color="#f2eee5"/></linearGradient>
+  <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fa9b9"/><stop offset="1" stop-color="#284b64"/></linearGradient>
+  <linearGradient id="pier" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c9a878"/><stop offset="1" stop-color="#8d6b42"/></linearGradient>
+</defs>
+<rect width="1200" height="680" fill="url(#sky)"/>
+<circle cx="920" cy="118" r="62" fill="#f4dfad" opacity=".75"/>
+<path d="M0 315 L155 188 L290 310 L418 178 L575 314 L720 205 L866 317 L1010 160 L1200 310 L1200 430 L0 430 Z" fill="#6d8593"/>
+<path d="M0 350 L170 255 L300 365 L460 238 L615 365 L760 275 L880 364 L1035 245 L1200 355 L1200 455 L0 455 Z" fill="#456579" opacity=".92"/>
+<path d="M0 395 C200 372 390 405 600 388 C830 370 1010 396 1200 382 L1200 680 L0 680 Z" fill="url(#water)"/>
+<g opacity=".24" stroke="#fff" stroke-width="3">
+  <path d="M90 470 C270 455 380 482 540 468 S860 456 1080 470"/>
+  <path d="M40 522 C210 504 355 535 525 516 S860 503 1160 520"/>
+  <path d="M100 575 C250 562 390 588 560 570 S885 560 1100 578"/>
+</g>
+<path d="M505 680 L570 480 L635 480 L700 680 Z" fill="url(#pier)"/>
+<path d="M533 624 L674 624 M548 575 L659 575 M559 535 L648 535 M568 503 L639 503" stroke="#7d5a37" stroke-width="7" opacity=".72"/>
+<rect x="551" y="442" width="16" height="92" rx="4" fill="#314657"/>
+<rect x="637" y="442" width="16" height="92" rx="4" fill="#314657"/>
+</svg>
