@@ -1,1 +1,147 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="description" content="AVDepot – Altersvorsorge berechnen und Vorsorgewege vergleichen"><title>AVDepot – Altersvorsorge & Rentenvergleich</title><link rel="stylesheet" href="../assets/style.css"></head><body><header><div class="wrap"><nav><a class="brand" href="../">Apps von Lukas Marcisz</a><div class="navlinks"><a href="../avdepot/">AVDepot</a><a href="../scantoemail/">ScanToEmail</a><a href="../impressum/">Impressum</a></div></nav></div></header><main><div class="wrap"><section class="hero"><div class="eyebrow">AVDepot</div><h1>Altersvorsorge verständlich vergleichen.</h1><p class="lead">Beiträge, mögliche Förderung, steuerliche Effekte und langfristige Modellrechnungen einordnen und Altersvorsorgedepot, Basisrente und fondsgebundene Privatrente gegenüberstellen.</p></section><section class="grid"><div class="card"><h2>Berechnen</h2><p>Beiträge, Förderung, steuerliche Effekte und persönlichen Nettoaufwand nachvollziehen.</p></div><div class="card"><h2>Vergleichen</h2><p>Unterschiede bei Steuern, Flexibilität, Kapitalzugriff und Auszahlungsphase verständlich betrachten.</p></div><div class="card"><h2>Basic</h2><p>Die wesentlichen Funktionen für einen schnellen und verständlichen Einstieg.</p></div><div class="card"><h2>Pro</h2><p>Detailliertere Analysen, individuelle Szenarien sowie zusätzliche Vergleichs- und Berichtsfunktionen. Einmaliger In-App-Kauf, kein Abonnement.</p></div></section><div class="notice"><strong>Hinweis:</strong> AVDepot stellt Modellrechnungen und allgemeine Vergleichsinformationen bereit und ersetzt keine individuelle Anlage-, Versicherungs-, Steuer- oder Rechtsberatung.</div><div class="linklist"><a href="datenschutz/">Datenschutz der App</a><a href="haftung/">Haftung & Modellhinweise</a><a href="support/">Support</a><a href="../impressum/">Impressum</a></div></div></main><footer><div class="wrap"><div class="footerlinks"><a href="../datenschutz/">Datenschutz Website</a><a href="../impressum/">Impressum</a><a href="mailto:marcisz.apps@icloud.com">Kontakt</a></div><p>© 2026 Lukas Marcisz</p></div></footer></body></html>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="AVDepot – Altersvorsorgedepot, Basisrente und fondsgebundene Privatrente verständlich vergleichen.">
+  <meta property="og:title" content="AVDepot – Altersvorsorge verständlich vergleichen">
+  <meta property="og:description" content="Altersvorsorgedepot, Basisrente und fondsgebundene Privatrente über die Vorsorgeschichten hinweg vergleichen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://9h2vfv4j58-blip.github.io/apps/avdepot/">
+  <title>AVDepot – Altersvorsorge & Rentenvergleich</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .av-hero{padding:58px 0 46px;max-width:860px}
+    .av-hero h1{max-width:800px}
+    .av-hero .lead{max-width:790px;font-size:clamp(1.08rem,1.8vw,1.22rem)}
+    .av-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px;color:var(--muted);font-size:.94rem}
+    .av-meta span{display:inline-flex;align-items:center;gap:7px}
+    .av-meta span:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
+    .av-rule{height:1px;background:var(--line);margin:8px 0 0}
+    .av-section{padding:44px 0}
+    .av-section-head{max-width:760px;margin-bottom:24px}
+    .av-section-head h2{margin:.1em 0 .5em}
+    .av-section-head p{margin:0;color:var(--muted)}
+    .av-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .av-panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+    .av-panel .label{font-size:.82rem;color:var(--accent);font-weight:750;letter-spacing:.01em}
+    .av-panel h3{margin:.4em 0 .45em;font-size:1.2rem;line-height:1.25}
+    .av-panel p{margin:0;color:var(--muted)}
+    .av-compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .av-compare article{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+    .av-compare h3{font-size:1.18rem;margin:0 0 10px}
+    .av-compare p{margin:0;color:var(--muted)}
+    .av-editions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .av-edition{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+    .av-edition h3{font-size:1.35rem;margin:.15em 0 .45em}
+    .av-edition p{color:var(--muted)}
+    .av-edition ul{padding-left:20px;margin:16px 0 0;color:var(--muted)}
+    .av-edition li+li{margin-top:7px}
+    .av-pro{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+    .av-price{font-weight:750;color:var(--text)!important;margin-top:18px!important}
+    .av-use{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .av-use article{padding:22px 0;border-top:1px solid var(--line)}
+    .av-use h3{margin:0 0 8px;font-size:1.15rem}
+    .av-use p{margin:0;color:var(--muted)}
+    .av-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;margin-top:8px}
+    .av-cta h2{margin:0 0 7px;font-size:1.55rem}
+    .av-cta p{margin:0;color:var(--muted);max-width:650px}
+    .av-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;font-weight:700;background:var(--surface);white-space:nowrap}
+    .av-smalllinks{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .av-smalllinks a{text-decoration:none;color:var(--muted);font-size:.94rem}
+    @media(max-width:800px){.av-grid-3,.av-compare{grid-template-columns:1fr 1fr}.av-editions,.av-use{grid-template-columns:1fr}.av-cta{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.av-grid-3,.av-compare{grid-template-columns:1fr}.av-hero{padding-top:26px}.av-section{padding:34px 0}.av-meta{gap:10px 16px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="../">Apps von Lukas Marcisz</a>
+      <div class="navlinks"><a href="../avdepot/">AVDepot</a><a href="support/">Support</a><a href="../impressum/">Impressum</a></div>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <section class="av-hero">
+      <div class="eyebrow">AVDepot</div>
+      <h1>Altersvorsorge verständlich vergleichen.</h1>
+      <p class="lead">AVDepot verbindet Rechner, Analyse und Vergleich in einer App. Altersvorsorgedepot, Basisrente und fondsgebundene Privatrente lassen sich über die unterschiedlichen Vorsorgeschichten hinweg strukturiert gegenüberstellen.</p>
+      <div class="av-meta"><span>Für iPhone und iPad</span><span>Basic & Pro</span><span>Pro einmalig freischaltbar</span><span>Kein Abo</span></div>
+    </section>
+
+    <div class="av-rule"></div>
+
+    <section class="av-section" id="funktionen">
+      <div class="av-section-head">
+        <div class="eyebrow">Funktionen</div>
+        <h2>Von der Eingabe bis zur Einordnung.</h2>
+        <p>Die App konzentriert sich auf die Fragen, die bei einer langfristigen Vorsorgeentscheidung tatsächlich relevant sind.</p>
+      </div>
+      <div class="av-grid-3">
+        <article class="av-panel"><div class="label">01</div><h3>Förderung & Nettoaufwand</h3><p>Beiträge, mögliche Zulagen, steuerliche Effekte und persönlicher Nettoaufwand werden nachvollziehbar dargestellt.</p></article>
+        <article class="av-panel"><div class="label">02</div><h3>Vermögensentwicklung</h3><p>Langfristige Modellrechnungen zeigen, wie sich unterschiedliche Annahmen auf die Entwicklung der Altersvorsorge auswirken können.</p></article>
+        <article class="av-panel"><div class="label">03</div><h3>Vorsorgevergleich</h3><p>Steuerwirkung, Flexibilität, Kapitalzugriff, Vererbbarkeit und Auszahlungsphase lassen sich strukturiert vergleichen.</p></article>
+      </div>
+    </section>
+
+    <section class="av-section">
+      <div class="av-section-head">
+        <div class="eyebrow">Drei Vorsorgewege</div>
+        <h2>Nicht nur Depots vergleichen.</h2>
+        <p>AVDepot betrachtet unterschiedliche Vorsorgeschichten und macht deren jeweilige Logik und Unterschiede sichtbar.</p>
+      </div>
+      <div class="av-compare">
+        <article><h3>Altersvorsorgedepot</h3><p>Gefördertes Vorsorgesparen mit Fokus auf Beitrag, Förderung, Steuerwirkung und späterer Auszahlung.</p></article>
+        <article><h3>Basisrente</h3><p>Steuerlich geprägte Altersvorsorge mit langfristiger Bindung und lebenslanger Rentenleistung.</p></article>
+        <article><h3>Fondsgebundene Privatrente</h3><p>Flexible private Vorsorge mit verschiedenen Möglichkeiten für Kapital- und Rentenauszahlung.</p></article>
+      </div>
+    </section>
+
+    <section class="av-section">
+      <div class="av-section-head">
+        <div class="eyebrow">Basic & Pro</div>
+        <h2>Einfach starten. Bei Bedarf vertiefen.</h2>
+        <p>Die Grundfunktionen bleiben bewusst übersichtlich. Erweiterte Analysen und Beratungsfunktionen stehen in Pro zur Verfügung.</p>
+      </div>
+      <div class="av-editions">
+        <article class="av-edition">
+          <div class="badge">Basic</div>
+          <h3>Die wichtigsten Grundlagen</h3>
+          <ul><li>Altersvorsorgedepot berechnen</li><li>Kompakte Analyse</li><li>Vorsorgewege vergleichen</li><li>Verständliche Ergebnisdarstellung</li></ul>
+          <p class="av-price">Kostenloser Einstieg</p>
+        </article>
+        <article class="av-edition av-pro">
+          <div class="badge">Pro</div>
+          <h3>Mehr Tiefe für Analyse und Beratung</h3>
+          <ul><li>Erweiterte Eingaben und Ergebnisse</li><li>Individuelle Szenarien</li><li>Zusätzliche Analysefunktionen</li><li>iPad-Beratungsmodus und Kundenpräsentation</li><li>Erweiterte, konfigurierbare Berichte</li></ul>
+          <p class="av-price">Einmalige Freischaltung · kein Abonnement</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="av-section">
+      <div class="av-section-head">
+        <div class="eyebrow">Für Planung und Beratung</div>
+        <h2>Auf dem iPhone kompakt. Auf dem iPad ausführlicher.</h2>
+      </div>
+      <div class="av-use">
+        <article><h3>iPhone</h3><p>Schneller Rechner, verständliche Analyse, kompakter Vergleich und einfache Szenarien für die eigene Planung.</p></article>
+        <article><h3>iPad</h3><p>Erweiterte Darstellung für Beratung, strukturierte Vergleiche, Kundenpräsentation und ausführlichere Analyse.</p></article>
+      </div>
+    </section>
+
+    <section class="av-cta">
+      <div><h2>AVDepot für iPhone und iPad</h2><p>Der App-Store-Link wird ergänzt, sobald AVDepot veröffentlicht ist. Bis dahin stehen Support und rechtliche Informationen bereits zur Verfügung.</p></div>
+      <a class="av-btn" href="support/">Zum Support</a>
+    </section>
+
+    <div class="notice"><strong>Hinweis:</strong> AVDepot dient der Information und Modellrechnung. Ergebnisse beruhen auf den eingegebenen Daten und getroffenen Annahmen. Die App stellt keine individuelle Anlage-, Versicherungs-, Steuer- oder Rechtsberatung dar. Steuerliche und gesetzliche Rahmenbedingungen können sich ändern.</div>
+    <div class="av-smalllinks"><a href="datenschutz/">Datenschutz der App</a><a href="haftung/">Haftung & Modellhinweise</a><a href="support/">Support</a><a href="../impressum/">Impressum</a></div>
+  </div>
+</main>
+<footer><div class="wrap"><div class="footerlinks"><a href="../datenschutz/">Datenschutz Website</a><a href="../impressum/">Impressum</a><a href="mailto:marcisz.apps@icloud.com">Kontakt</a></div><p>© 2026 Lukas Marcisz</p></div></footer>
+</body>
+</html>
