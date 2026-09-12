@@ -3,50 +3,409 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="AVDepot – Altersvorsorge planen, vergleichen und fundiert einordnen. Altersvorsorgedepot, Basisrente und fondsgebundene Privatrente für iPhone und iPad.">
-<meta property="og:title" content="AVDepot – Altersvorsorge & Rentenvergleich">
-<meta property="og:description" content="Planen. Vergleichen. Besser entscheiden.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="AVDepot – Altersvorsorge planen, Altersvorsorgedepot, Basisrente und fondsgebundene Privatrente vergleichen.">
+<meta property="og:title" content="AVDepot – Planen. Vergleichen. Besser entscheiden.">
+<meta property="og:description" content="Altersvorsorgedepot, Basisrente und fondsgebundene Privatrente verständlich vergleichen.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://9h2vfv4j58-blip.github.io/apps/avdepot/">
 <title>AVDepot – Altersvorsorge & Rentenvergleich</title>
 <style>
+:root{
+  --navy:#0b2940;
+  --navy2:#123c59;
+  --blue:#2d6790;
+  --text:#132b3f;
+  --muted:#6c7e8e;
+  --line:#dde4e9;
+  --paper:#ffffff;
+  --off:#fbfaf7;
+  --cream:#f3eee3;
+  --cream2:#e8deca;
+  --gold:#c29a42;
+  --gold2:#a67a20;
+  --soft:#edf3f6;
+  --max:1180px;
+  --shadow:0 24px 54px rgba(14,42,62,.16);
+}
 *{box-sizing:border-box}
-html,body{margin:0;background:#fff;color:#0f2b43;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif}
-.page{position:relative;width:100%;max-width:1440px;margin:0 auto;line-height:0;background:#fff}
-.page>img{display:block;width:100%;height:auto}
-.hotspot{position:absolute;z-index:5;display:block;text-decoration:none;background:transparent}
-.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-@media(min-width:1441px){body{background:#f4f5f6}.page{box-shadow:0 0 60px rgba(21,43,60,.08)}}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:#fff;color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",sans-serif;
+  line-height:1.45;-webkit-font-smoothing:antialiased
+}
+a{color:inherit}
+.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+header{height:64px;background:#fff;border-bottom:1px solid #edf0f2;position:sticky;top:0;z-index:50}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{display:flex;align-items:baseline;gap:14px;text-decoration:none}
+.brand strong{font-size:1.68rem;line-height:1;letter-spacing:-.04em;color:var(--navy)}
+.brand span{font-size:.76rem;color:#5d7080}
+.links{display:flex;align-items:center;gap:27px;font-size:.88rem}
+.links a{text-decoration:none;color:#253c4d}
+.store{
+  background:var(--navy);color:#fff!important;border-radius:9px;
+  padding:10px 16px;font-weight:700;white-space:nowrap
+}
+
+/* HERO – exact composition of the approved concept */
+.hero{
+  position:relative;overflow:hidden;
+  min-height:414px;
+  background:
+    linear-gradient(90deg,rgba(248,249,249,.97) 0%,rgba(248,249,249,.93) 34%,rgba(248,249,249,.25) 60%,rgba(248,249,249,.06) 100%),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1900&q=85") center 48%/cover no-repeat;
+}
+.hero:after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:82px;
+  background:linear-gradient(180deg,transparent,rgba(185,141,91,.12));
+  pointer-events:none
+}
+.hero-grid{min-height:414px;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:26px;position:relative;z-index:2}
+.hero-copy{padding:36px 0 44px;max-width:560px}
+.gold-rule{width:38px;height:3px;border-radius:5px;background:var(--gold);margin:0 0 20px}
+.hero h1{font-size:clamp(2.55rem,4.1vw,4rem);line-height:1.05;letter-spacing:-.045em;margin:0 0 18px;color:var(--navy)}
+.hero p{font-size:1.08rem;line-height:1.55;color:#233a4c;margin:0 0 24px;max-width:520px}
+.app-btn{
+  display:inline-flex;align-items:center;gap:12px;background:var(--navy);color:#fff;
+  border-radius:9px;padding:11px 18px;text-decoration:none;box-shadow:0 8px 22px rgba(8,34,52,.12)
+}
+.apple{font-size:1.7rem;line-height:1}
+.app-btn b{display:block;font-size:.98rem}
+.app-btn small{display:block;font-size:.71rem;font-weight:500;opacity:.88;margin-top:1px}
+
+/* device mockups */
+.devices{position:relative;height:360px;align-self:end;margin-top:28px}
+.ipad{
+  position:absolute;right:0;bottom:19px;width:min(64vw,600px);height:310px;
+  background:#111;border:3px solid #252525;border-radius:27px;
+  box-shadow:0 28px 45px rgba(20,31,39,.28);padding:12px;transform:perspective(1200px) rotateY(-1deg)
+}
+.ipad-screen{height:100%;background:#fafbfc;border-radius:17px;padding:17px 20px;overflow:hidden}
+.screen-top{display:flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:700;color:#243747;margin-bottom:12px}
+.segment{height:26px;background:#eef2f4;border-radius:7px;display:grid;grid-template-columns:1fr 1fr;align-items:center;text-align:center;font-size:.56rem;color:#566876;margin-bottom:15px}
+.segment span:first-child{background:#e2e8ec;border-radius:6px;height:22px;display:grid;place-items:center;color:#1f4159}
+.chart{height:180px;position:relative;margin-left:28px;border-left:1px solid #dbe2e7;border-bottom:1px solid #dbe2e7;
+  background:repeating-linear-gradient(to bottom,transparent 0,transparent 44px,#e7ecef 45px,#e7ecef 46px)
+}
+.chart svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.legend{display:flex;gap:20px;justify-content:center;margin-top:10px;font-size:.55rem;color:#627482}
+.legend i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:5px;vertical-align:-1px}
+.phone{
+  position:absolute;left:0;bottom:0;width:165px;height:318px;background:#0c0d0e;border:3px solid #222;
+  border-radius:29px;padding:8px;box-shadow:0 24px 38px rgba(20,31,39,.30);z-index:5
+}
+.phone-screen{height:100%;background:#fbfcfd;border-radius:21px;padding:28px 11px 10px;position:relative;overflow:hidden}
+.notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:62px;height:15px;border-radius:10px;background:#0b0b0c}
+.welcome{font-size:.62rem;color:#263d4e;line-height:1.15;margin-bottom:11px}.welcome b{font-size:.85rem}
+.choice{display:flex;align-items:center;gap:8px;padding:8px 7px;border-radius:8px;background:#f0f4f7;margin:7px 0}
+.choice.gold{background:#f7f1e7}.choice.gray{background:#f1f2f3}
+.choice-dot{width:18px;height:18px;border-radius:5px;background:#2f70a2;flex:0 0 18px}
+.choice.gold .choice-dot{background:#c58d3c}.choice.gray .choice-dot{background:#9ba4aa}
+.choice strong{display:block;font-size:.49rem;line-height:1.1;color:#253c4c}
+.choice span{display:block;font-size:.41rem;color:#73818c;margin-top:2px}
+.mini-action{margin-top:8px;border:1px solid #d9e1e6;border-radius:7px;padding:7px;font-size:.47rem;color:#2f4656}
+.tabbar{position:absolute;bottom:7px;left:8px;right:8px;display:flex;justify-content:space-around;font-size:.38rem;color:#536b7b;border-top:1px solid #e6ebee;padding-top:5px}
+
+/* benefit bar */
+.benefits{background:#fff;border-top:1px solid rgba(230,234,237,.7);border-bottom:1px solid #e6eaed}
+.benefit-grid{min-height:145px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center}
+.benefit{text-align:center;padding:18px 12px}
+.icon-circle{width:52px;height:52px;margin:0 auto 10px;border:1.5px solid #9eb0bd;border-radius:50%;display:grid;place-items:center;color:var(--navy)}
+.icon-circle svg{width:25px;height:25px}
+.benefit b{display:block;color:var(--navy);font-size:1rem}
+.benefit span{display:block;color:#526b7e;font-size:.79rem;line-height:1.25;margin-top:3px}
+
+/* split scenic section */
+.scenic{display:grid;grid-template-columns:1fr 1fr;min-height:250px;background:#fff}
+.scenic-photo{
+  position:relative;min-height:250px;background:
+  linear-gradient(0deg,rgba(11,41,64,.16),rgba(11,41,64,.05)),
+  url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=85") center 52%/cover no-repeat
+}
+.scenic-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,30,48,.18),transparent 60%)}
+.photo-caption{position:absolute;z-index:2;left:max(32px,calc((100vw - var(--max))/2));bottom:35px;color:#fff;font-size:1.62rem;line-height:1.2;font-weight:700;max-width:360px;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+.scenic-copy{display:flex;align-items:center;padding:38px 7vw 38px 42px}
+.scenic-copy-inner{max-width:500px}
+.scenic h2{font-size:2rem;line-height:1.08;letter-spacing:-.035em;color:var(--navy);margin:10px 0 12px}
+.scenic p{margin:0 0 20px;color:#314a5c;font-size:.98rem}
+.cream-btn{display:inline-flex;background:var(--cream);padding:10px 18px;border-radius:9px;text-decoration:none;color:var(--navy);font-weight:700;font-size:.82rem}
+
+/* Basic / Pro */
+.pricing{padding:42px 0 38px;background:#fff}
+.pricing-grid{display:grid;grid-template-columns:.8fr 1fr 1fr;gap:20px;align-items:stretch}
+.pricing-intro{padding:12px 15px 12px 0}
+.pricing-intro h2{font-size:1.85rem;line-height:1.05;letter-spacing:-.035em;margin:12px 0 17px;color:var(--navy)}
+.short-list{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px}
+.short-list li{font-size:.84rem;color:#324b5c;display:flex;gap:9px}
+.short-list li:before{content:"✓";width:19px;height:19px;border:1px solid #cbd5dc;border-radius:50%;display:grid;place-items:center;color:var(--navy);font-weight:800;flex:0 0 19px}
+.plan{
+  border:1px solid #d6dfe5;border-radius:13px;padding:24px 25px;background:#fff;position:relative;
+  display:flex;flex-direction:column
+}
+.plan.pro{border:1.5px solid var(--gold)}
+.recommended{position:absolute;right:21px;top:-13px;background:#caa446;color:#fff;padding:5px 13px;border-radius:8px;font-size:.7rem;font-weight:700}
+.plan h3{margin:0 0 4px;color:var(--navy);font-size:1.45rem;letter-spacing:-.025em}
+.plan .subtitle{color:#557084;font-size:.78rem;margin-bottom:18px}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.plan li{font-size:.83rem;color:#32495b;display:flex;gap:9px}
+.plan li:before{content:"✓";font-size:1rem;color:var(--navy);font-weight:900}
+.price{margin-top:auto;padding-top:23px;color:var(--navy);font-size:1.8rem;font-weight:800}
+.price small{display:block;font-size:.72rem;color:#667b8a;font-weight:500;margin-top:0}
+.pro .price{font-size:1rem}.pro .price small{margin-top:4px}
+
+/* Device section */
+.device-band{display:grid;grid-template-columns:.95fr 1.55fr;min-height:250px;background:#f8fafb;border-top:1px solid #edf0f2}
+.device-photo{
+  position:relative;overflow:hidden;min-height:250px;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,255,255,.2)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80") center/cover no-repeat
+}
+.device-mini{position:absolute;right:16px;bottom:12px;transform:scale(.62);transform-origin:right bottom}
+.device-band-copy{display:grid;grid-template-columns:1.2fr .75fr;gap:35px;align-items:center;padding:30px 6vw 30px 46px}
+.device-text h2{font-size:1.85rem;color:var(--navy);margin:0 0 10px;letter-spacing:-.03em}
+.device-text p{font-size:.92rem;color:#567084;margin:0 0 15px}
+.device-text ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.device-text li{font-size:.82rem;color:#365065}
+.device-text li:before{content:"✓";font-weight:900;color:var(--navy);margin-right:8px}
+.quote{background:#fff;border-radius:12px;padding:22px;color:#456074;min-height:145px}
+.quote:before{content:"”";display:block;font-size:2.8rem;line-height:.7;color:#93a6b4;font-weight:800;margin-bottom:10px}
+.quote p{font-size:.84rem;line-height:1.45;margin:0 0 12px}
+.quote small{font-size:.67rem;color:#71828f}
+
+/* footer CTA */
+.bottom-cta{
+  min-height:94px;position:relative;overflow:hidden;color:#fff;
+  background:
+    linear-gradient(90deg,rgba(8,40,63,.98) 0%,rgba(9,45,70,.96) 53%,rgba(11,49,74,.82) 100%),
+    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=70") center 62%/cover no-repeat;
+}
+.cta-wrap{min-height:94px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.cta-wrap h2{color:#fff;font-size:1.45rem;line-height:1.1;margin:0;font-weight:650}
+.cta-wrap h2 span{font-weight:400}
+.cta-store{background:#fff;color:var(--navy);border-radius:9px;padding:10px 17px;text-decoration:none;font-weight:750;font-size:.82rem;white-space:nowrap}
+
+footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
+.footer{min-height:62px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer-brand{display:flex;align-items:baseline;gap:12px}
+.footer-brand strong{color:var(--navy);font-size:1.15rem}
+.footer-brand span{font-size:.6rem;color:#667b8b}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:flex-end}
+.footer-links a{font-size:.69rem;color:#40596b;text-decoration:none}
+.disclaimer{background:#fafbfc;border-top:1px solid #edf0f2;color:#7a8892;font-size:.68rem;padding:12px 0 15px}
+.disclaimer p{margin:0}
+
+/* responsive */
+@media(max-width:980px){
+  .brand span{display:none}
+  .links{gap:18px}
+  .links a:not(.store){display:none}
+  .hero{min-height:auto}
+  .hero-grid{grid-template-columns:1fr;min-height:auto;padding-top:15px}
+  .hero-copy{padding:34px 0 4px}
+  .devices{height:330px;max-width:720px;width:100%;margin:0 auto}
+  .ipad{width:80%}
+  .benefit-grid{grid-template-columns:repeat(2,1fr)}
+  .scenic{grid-template-columns:1fr}
+  .scenic-photo{min-height:300px}
+  .photo-caption{left:30px}
+  .pricing-grid{grid-template-columns:1fr 1fr}
+  .pricing-intro{grid-column:1/-1}
+  .device-band{grid-template-columns:1fr}
+  .device-photo{min-height:280px}
+  .device-band-copy{padding:35px 30px}
+}
+@media(max-width:650px){
+  .wrap{width:min(var(--max),calc(100% - 30px))}
+  header,.nav{height:58px}
+  .brand strong{font-size:1.45rem}
+  .store{padding:8px 10px;font-size:.76rem}
+  .hero h1{font-size:2.55rem}
+  .hero-copy{padding-top:28px}
+  .devices{height:285px}
+  .ipad{width:89%;height:245px;right:-5px}
+  .ipad-screen{padding:12px}
+  .chart{height:130px}
+  .phone{width:125px;height:250px;left:-2px}
+  .benefit-grid{grid-template-columns:1fr 1fr;min-height:auto;padding:12px 0}
+  .benefit{padding:14px 4px}
+  .icon-circle{width:45px;height:45px}
+  .benefit span{font-size:.72rem}
+  .scenic-copy{padding:34px 22px}
+  .photo-caption{font-size:1.35rem;left:24px}
+  .pricing-grid{grid-template-columns:1fr}
+  .pricing{padding-top:34px}
+  .plan{min-height:260px}
+  .device-band-copy{grid-template-columns:1fr;padding:31px 22px}
+  .quote{min-height:auto}
+  .cta-wrap{padding:20px 0;flex-direction:column;align-items:flex-start}
+  .bottom-cta,.cta-wrap{min-height:120px}
+  .footer{align-items:flex-start;flex-direction:column;padding:20px 0}
+  .footer-links{justify-content:flex-start;gap:14px 18px}
+}
+
+/* no motion for accessibility */
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div class="page">
-<img alt="AVDepot Marketingseite mit Rechner, Vorsorgevergleich, Basic und Pro sowie iPhone- und iPad-Darstellung" src="data:image/jpeg;base64,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 ...REDACTED_FOR_LENGTH... ">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="./"><strong>AVDepot</strong><span>Planen. Vergleichen. Besser entscheiden.</span></a>
+    <nav class="links" aria-label="Navigation">
+      <a href="#funktionen">Funktionen</a>
+      <a href="#pro">Pro</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#faq">FAQ</a>
+      <a class="store" href="#" aria-disabled="true">Bald im App Store</a>
+    </nav>
+  </div>
+</header>
 
-<a class="hotspot" href="#funktionen" aria-label="Zu den Funktionen" style="left:51.5%;top:.2%;width:8%;height:3.4%"></a>
-<a class="hotspot" href="#pro" aria-label="Zu AVDepot Pro" style="left:60%;top:.2%;width:5%;height:3.4%"></a>
-<a class="hotspot" href="#screenshots" aria-label="Zu iPhone und iPad" style="left:65%;top:.2%;width:10%;height:3.4%"></a>
-<a class="hotspot" href="#faq" aria-label="Zu häufigen Fragen" style="left:75%;top:.2%;width:6%;height:3.4%"></a>
-<a class="hotspot" href="#funktionen" aria-label="Mehr über die Funktionen" style="left:53.5%;top:50.7%;width:22%;height:3.2%"></a>
-<a class="hotspot" href="#pro" aria-label="Basic und Pro im Detail" style="left:5.5%;top:70.4%;width:19%;height:2.8%"></a>
-<a class="hotspot" href="#screenshots" aria-label="iPhone und iPad ansehen" style="left:40%;top:87.2%;width:18%;height:2.8%"></a>
-<a class="hotspot" href="support/" aria-label="Support" style="left:56%;top:97.4%;width:6%;height:2.2%"></a>
-<a class="hotspot" href="datenschutz/" aria-label="Datenschutz der App" style="left:62%;top:97.4%;width:8%;height:2.2%"></a>
-<a class="hotspot" href="haftung/" aria-label="Haftung und Modellhinweise" style="left:70%;top:97.4%;width:14%;height:2.2%"></a>
-<a class="hotspot" href="../impressum/" aria-label="Impressum" style="left:84%;top:97.4%;width:8%;height:2.2%"></a>
-
-<section class="sr-only" aria-label="AVDepot Informationen">
-<h1>AVDepot – Altersvorsorge verständlich vergleichen</h1>
-<p>AVDepot hilft dabei, Altersvorsorgedepot, Basisrente und fondsgebundene Privatrente strukturiert zu vergleichen und Modellrechnungen zu Förderung, Steuerwirkung, Vermögensentwicklung und Auszahlung einzuordnen.</p>
-<h2 id="funktionen">Funktionen</h2>
-<p>Rechner, Vorsorgevergleich, individuelle Szenarien und Analyse der Vermögensentwicklung.</p>
-<h2 id="pro">Basic und Pro</h2>
-<p>Basic enthält die wesentlichen Grundfunktionen. Pro erweitert AVDepot um zusätzliche Analysen, Szenarien, Beratungsmodus und Berichte. Pro ist als einmalige Freischaltung ohne Abonnement vorgesehen.</p>
-<h2 id="screenshots">Für iPhone und iPad</h2>
-<p>Auf dem iPhone bleibt AVDepot kompakt. Auf dem iPad stehen umfangreichere Darstellungen für Planung, Beratung und Kundenpräsentation zur Verfügung.</p>
-<h2 id="faq">Hinweise</h2>
-<p>AVDepot dient der Information und Modellrechnung und ersetzt keine individuelle Anlage-, Versicherungs-, Steuer- oder Rechtsberatung.</p>
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="gold-rule"></div>
+      <h1>Ihre finanzielle Zukunft in besten Händen.</h1>
+      <p>AVDepot hilft Ihnen, Ihre Altersvorsorge fundiert zu planen, verschiedene Lösungen objektiv zu vergleichen und die für Sie passende Entscheidung zu treffen.</p>
+      <a class="app-btn" href="#" aria-disabled="true"><span class="apple">●</span><span><b>Bald im App Store</b><small>Für iPhone und iPad</small></span></a>
+    </div>
+    <div class="devices" aria-label="AVDepot auf iPhone und iPad">
+      <div class="ipad">
+        <div class="ipad-screen">
+          <div class="screen-top">Prognose</div>
+          <div class="segment"><span>Entwicklung</span><span>Tabelle</span></div>
+          <div class="chart">
+            <svg viewBox="0 0 500 180" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0 174 C90 163 150 142 215 119 S350 70 500 15" fill="none" stroke="#2463a5" stroke-width="4"/>
+              <path d="M0 175 C95 168 165 155 230 139 S370 105 500 66" fill="none" stroke="#d2a638" stroke-width="3.5"/>
+              <path d="M0 176 C100 172 190 168 260 158 S395 144 500 126" fill="none" stroke="#a9b1b8" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="legend"><span><i style="background:#2463a5"></i>Altersvorsorgedepot</span><span><i style="background:#d2a638"></i>Basisrente</span><span><i style="background:#a9b1b8"></i>Private Rente</span></div>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <div class="welcome">Willkommen bei<br><b>AVDepot</b></div>
+          <div class="choice"><i class="choice-dot"></i><div><strong>Altersvorsorgedepot</strong><span>Flexibel investieren</span></div></div>
+          <div class="choice gold"><i class="choice-dot"></i><div><strong>Basisrente</strong><span>Steuervorteile nutzen</span></div></div>
+          <div class="choice gray"><i class="choice-dot"></i><div><strong>Private Rente</strong><span>Persönlich vorsorgen</span></div></div>
+          <div class="mini-action">▣ &nbsp; Vergleich &nbsp; Optionen gegenüberstellen</div>
+          <div class="mini-action">▢ &nbsp; Beratungsmodus &nbsp; Für Kundengespräche</div>
+          <div class="tabbar"><span>Start</span><span>Rechner</span><span>Vergleich</span><span>Mehr</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-</div>
+
+<section class="benefits" id="funktionen">
+  <div class="wrap benefit-grid">
+    <div class="benefit"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V11M10 19V6M16 19v-9M22 19H2"/></svg></div><b>Rechnen</b><span>Realistische Prognosen</span></div>
+    <div class="benefit"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M4 7h16M7 7l-4 7h8L7 7Zm10 0-4 7h8l-4-7Z"/></svg></div><b>Vergleichen</b><span>Objektive Gegenüberstellung</span></div>
+    <div class="benefit"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M15 8l-2 5-5 2 2-5 5-2Z"/></svg></div><b>Analysieren</b><span>Individuelle Szenarien</span></div>
+    <div class="benefit"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="7" r="2.5"/><path d="M2.5 20c.5-4 2.5-6 5.5-6s5 2 5.5 6M14 14c3 0 5.5 1.8 6 5"/></svg></div><b>Besser entscheiden</b><span>Für Ihre finanzielle Zukunft</span></div>
+  </div>
+</section>
+
+<section class="scenic">
+  <div class="scenic-photo"><div class="photo-caption">Heute die richtigen Weichen stellen – für morgen.</div></div>
+  <div class="scenic-copy">
+    <div class="scenic-copy-inner">
+      <div class="gold-rule"></div>
+      <h2>Drei Wege. Ein Ziel.<br>Ihre finanzielle Unabhängigkeit.</h2>
+      <p>AVDepot vergleicht Altersvorsorgedepot, Basisrente und fondsgebundene Privatrente – transparent, verständlich und auf Basis Ihrer persönlichen Daten.</p>
+      <a class="cream-btn" href="#pro">Mehr über die Funktionen</a>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pro">
+  <div class="wrap pricing-grid">
+    <div class="pricing-intro">
+      <div class="gold-rule"></div>
+      <h2>Basic oder Pro?<br>Sie haben die Wahl.</h2>
+      <ul class="short-list">
+        <li>Alle wichtigen Grundfunktionen</li>
+        <li>Ideal für den schnellen Überblick</li>
+        <li>Pro mit erweiterten Analysen und zusätzlichen Optionen</li>
+        <li>Einmalige Freischaltung – kein Abo</li>
+      </ul>
+      <a class="cream-btn" href="#faq">Funktionen im Detail</a>
+    </div>
+    <article class="plan">
+      <h3>AVDepot Basic</h3>
+      <div class="subtitle">Solide planen – kostenlos nutzen</div>
+      <ul>
+        <li>Rechner und Vergleich</li>
+        <li>Wichtige Analysen</li>
+        <li>Übersichtliche Darstellung</li>
+      </ul>
+      <div class="price">0 €<small>Für den Einstieg</small></div>
+    </article>
+    <article class="plan pro">
+      <span class="recommended">Empfohlen</span>
+      <h3>AVDepot Pro</h3>
+      <div class="subtitle">Mehr Möglichkeiten – einmalig freischalten</div>
+      <ul>
+        <li>Erweiterte Analysen</li>
+        <li>Zusätzliche Szenarien</li>
+        <li>Beratungsmodus für Kundengespräche</li>
+        <li>Kundenpräsentation und erweiterte Berichte</li>
+      </ul>
+      <div class="price">Einmalig freischalten<small>Kein Abo. Keine laufenden Kosten.</small></div>
+    </article>
+  </div>
+</section>
+
+<section class="device-band" id="screenshots">
+  <div class="device-photo">
+    <div class="device-mini">
+      <div class="devices" style="width:620px;height:340px">
+        <div class="ipad" style="width:480px;height:275px;right:0"><div class="ipad-screen"><div class="screen-top">AVDepot</div><div class="segment"><span>Analyse</span><span>Vergleich</span></div><div class="chart"><svg viewBox="0 0 500 180" preserveAspectRatio="none"><path d="M0 174 C90 163 150 142 215 119 S350 70 500 15" fill="none" stroke="#2463a5" stroke-width="4"/><path d="M0 175 C95 168 165 155 230 139 S370 105 500 66" fill="none" stroke="#d2a638" stroke-width="3.5"/></svg></div></div></div>
+        <div class="phone" style="left:20px"><div class="phone-screen"><div class="notch"></div><div class="welcome">Willkommen bei<br><b>AVDepot</b></div><div class="choice"><i class="choice-dot"></i><div><strong>Altersvorsorgedepot</strong><span>Flexibel investieren</span></div></div><div class="choice gold"><i class="choice-dot"></i><div><strong>Basisrente</strong><span>Steuervorteile nutzen</span></div></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="device-band-copy">
+    <div class="device-text">
+      <div class="gold-rule"></div>
+      <h2>Für iPhone und iPad.</h2>
+      <p>AVDepot ist für iPhone und iPad optimiert – für die persönliche Planung oder professionelle Beratungsgespräche.</p>
+      <ul><li>Auf dem iPhone bewusst kompakt</li><li>Auf dem iPad mit Beratungsmodus und erweiterter Darstellung</li></ul>
+    </div>
+    <aside class="quote"><p>„Komplexe Themen einfach und verständlich darstellen – genau so muss eine Vorsorge-App sein.“</p><small>Finanzinteressierter Nutzer</small></aside>
+  </div>
+</section>
+
+<section class="bottom-cta">
+  <div class="wrap cta-wrap">
+    <h2>Jetzt AVDepot kennenlernen<br><span>und Ihre Zukunft aktiv gestalten.</span></h2>
+    <a class="cta-store" href="#" aria-disabled="true">Bald im App Store</a>
+  </div>
+</section>
+
+<section id="faq" class="disclaimer">
+  <div class="wrap"><p><strong>Hinweis:</strong> AVDepot dient der Information und Modellrechnung. Ergebnisse beruhen auf den eingegebenen Daten und getroffenen Annahmen. Die App stellt keine individuelle Anlage-, Versicherungs-, Steuer- oder Rechtsberatung dar. Steuerliche und gesetzliche Rahmenbedingungen können sich ändern.</p></div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footer">
+    <div class="footer-brand"><strong>AVDepot</strong><span>Planen. Vergleichen. Besser entscheiden.</span></div>
+    <div class="footer-links">
+      <a href="support/">Support</a>
+      <a href="datenschutz/">Datenschutz</a>
+      <a href="haftung/">Haftung &amp; Modellhinweise</a>
+      <a href="../impressum/">Impressum</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
