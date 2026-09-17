@@ -305,16 +305,20 @@ footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
     <div class="devices" aria-label="AVDepot auf iPhone und iPad">
       <div class="ipad">
         <div class="ipad-screen">
-          <div class="screen-top">Prognose</div>
-          <div class="segment"><span>Entwicklung</span><span>Tabelle</span></div>
-          <div class="chart">
-            <svg viewBox="0 0 500 180" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M0 174 C90 163 150 142 215 119 S350 70 500 15" fill="none" stroke="#2463a5" stroke-width="4"/>
-              <path d="M0 175 C95 168 165 155 230 139 S370 105 500 66" fill="none" stroke="#d2a638" stroke-width="3.5"/>
-              <path d="M0 176 C100 172 190 168 260 158 S395 144 500 126" fill="none" stroke="#a9b1b8" stroke-width="3"/>
+          <div class="screen-top" style="justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+            <span style="display:block;text-align:left"><strong style="display:block;font-size:.88rem;line-height:1.1;color:#17304a">Vermögensentwicklung</strong><small style="display:block;font-size:.47rem;font-weight:500;color:#6a7c8a;margin-top:2px">Altersvorsorgedepot inkl. Förderung und Kapitalentwicklung</small></span>
+            <span style="display:block;text-align:right"><strong style="display:block;font-size:.9rem;line-height:1;color:#17304a">525.312 €</strong><small style="display:block;font-size:.48rem;font-weight:500;color:#6a7c8a;margin-top:3px">mit 67</small></span>
+          </div>
+          <div class="segment" style="margin-bottom:12px"><span>Nominal</span><span>Heutige Kaufkraft</span></div>
+          <div class="chart" style="height:170px;margin-left:18px;overflow:hidden">
+            <svg viewBox="0 0 500 170" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="heroWealthFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2463a5" stop-opacity=".16"/><stop offset="100%" stop-color="#2463a5" stop-opacity="0"/></linearGradient></defs>
+              <path d="M0 162 C60 157 118 147 174 133 C235 118 292 99 346 78 C406 55 454 31 500 10 L500 170 L0 170 Z" fill="url(#heroWealthFill)"/>
+              <path d="M0 162 C60 157 118 147 174 133 C235 118 292 99 346 78 C406 55 454 31 500 10" fill="none" stroke="#2463a5" stroke-width="4"/>
+              <path d="M0 162 C80 155 160 145 240 133 C330 120 418 105 500 92" fill="none" stroke="#98a9ba" stroke-width="2.5" stroke-dasharray="8 6"/>
             </svg>
           </div>
-          <div class="legend"><span><i style="background:#2463a5"></i>Altersvorsorgedepot</span><span><i style="background:#d2a638"></i>Basisrente</span><span><i style="background:#a9b1b8"></i>Private Rente</span></div>
+          <div class="legend" style="gap:16px;margin-top:8px"><span><i style="background:#2463a5"></i>Modellvermögen</span><span><i style="background:#98a9ba"></i>Eigene Einzahlungen</span></div>
         </div>
       </div>
       <div class="phone">
