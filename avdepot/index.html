@@ -181,9 +181,15 @@ header{height:64px;background:#fff;border-bottom:1px solid #edf0f2;position:stic
 .device-band{display:grid;grid-template-columns:.95fr 1.55fr;min-height:250px;background:#f8fafb;border-top:1px solid #edf0f2}
 .device-photo{
   position:relative;overflow:hidden;min-height:250px;
-  background:
-    linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,255,255,.2)),
-    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80") center/cover no-repeat
+  background:#eef2f4;
+}
+.device-photo img{
+  width:100%;
+  height:100%;
+  min-height:250px;
+  object-fit:cover;
+  object-position:center;
+  display:block;
 }
 .device-mini{position:absolute;right:16px;bottom:12px;transform:scale(.62);transform-origin:right bottom}
 .device-band-copy{display:grid;grid-template-columns:1.2fr .75fr;gap:35px;align-items:center;padding:30px 6vw 30px 46px}
@@ -392,13 +398,9 @@ footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
 
 <section class="device-band">
   <div class="device-photo">
-    <div class="device-mini">
-      <div class="devices" style="width:620px;height:340px">
-        <div class="ipad" style="width:480px;height:275px;right:0"><div class="ipad-screen"><div class="screen-top">AVDepot</div><div class="segment"><span>Analyse</span><span>Vergleich</span></div><div class="chart"><svg viewBox="0 0 500 180" preserveAspectRatio="none"><path d="M0 174 C90 163 150 142 215 119 S350 70 500 15" fill="none" stroke="#2463a5" stroke-width="4"/><path d="M0 175 C95 168 165 155 230 139 S370 105 500 66" fill="none" stroke="#d2a638" stroke-width="3.5"/></svg></div></div></div>
-        <div class="phone" style="left:20px"><div class="phone-screen"><div class="notch"></div><div class="welcome">Willkommen bei<br><b>AVDepot</b></div><div class="choice"><i class="choice-dot"></i><div><strong>Altersvorsorgedepot</strong><span>Flexibel investieren</span></div></div><div class="choice gold"><i class="choice-dot"></i><div><strong>Basisrente</strong><span>Steuervorteile nutzen</span></div></div></div></div>
-      </div>
-    </div>
+    <img src="assets/hero-approved-upload.jpg" alt="AVDepot auf iPhone und iPad" loading="lazy">
   </div>
+div>
   <div class="device-band-copy">
     <div class="device-text">
       <div class="gold-rule"></div>
