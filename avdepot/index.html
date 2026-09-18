@@ -75,6 +75,9 @@ header{height:64px;background:#fff;border-bottom:1px solid #edf0f2;position:stic
 .app-btn b{display:block;font-size:.98rem}
 .app-btn small{display:block;font-size:.71rem;font-weight:500;opacity:.88;margin-top:1px}
 
+.hero-reference{position:relative;height:370px;align-self:end;margin-top:18px;display:flex;align-items:flex-end;justify-content:flex-end}
+.hero-reference img{display:block;width:min(100%,620px);height:auto;border-radius:26px;box-shadow:0 28px 45px rgba(20,31,39,.24)}
+
 /* hero device mockups — proportions matched to the approved hero reference */
 .devices{position:relative;height:370px;align-self:end;margin-top:18px}
 .ipad{
@@ -222,6 +225,8 @@ footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
   .hero{min-height:auto}
   .hero-grid{grid-template-columns:1fr;min-height:auto;padding-top:15px}
   .hero-copy{padding:34px 0 4px}
+  .hero-reference{height:auto;max-width:720px;width:100%;margin:18px auto 0}
+  .hero-reference img{width:100%}
   .devices{height:350px;max-width:720px;width:100%;margin:0 auto}
   .ipad{width:70%;height:330px}
   .benefit-grid{grid-template-columns:repeat(2,1fr)}
@@ -242,6 +247,8 @@ footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
   .store{padding:8px 10px;font-size:.76rem}
   .hero h1{font-size:2.55rem}
   .hero-copy{padding-top:28px}
+  .hero-reference{height:auto;margin-top:14px}
+  .hero-reference img{border-radius:18px}
   .devices{height:290px}
   .ipad{width:78%;height:250px;right:-5px;border-radius:24px;padding:8px}
   .ipad-screen{border-radius:15px}
@@ -291,24 +298,8 @@ footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
       <p>AVDepot hilft Ihnen, Ihre Altersvorsorge fundiert zu planen, verschiedene Lösungen objektiv zu vergleichen und die für Sie passende Entscheidung zu treffen.</p>
       <a class="app-btn" href="https://apps.apple.com/de/app/avdepot/id6809229980" target="_blank" rel="noopener"><span class="apple">●</span><span><b>Jetzt kostenfrei im App Store</b><small>Basic kostenfrei · Pro inkl. iPad-Beratung</small></span></a>
     </div>
-    <div class="devices" aria-label="AVDepot auf iPhone und iPad">
-      <div class="ipad">
-        <div class="ipad-screen">
-          <img class="hero-ipad-image" src="assets/pro-ipad-beratung.jpg" alt="AVDepot Pro auf dem iPad">
-        </div>
-      </div>
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="notch"></div>
-          <div class="welcome">Willkommen bei<br><b>AVDepot</b></div>
-          <div class="choice"><i class="choice-dot"></i><div><strong>Altersvorsorgedepot</strong><span>Flexibel investieren</span></div></div>
-          <div class="choice gold"><i class="choice-dot"></i><div><strong>Basisrente</strong><span>Steuervorteile nutzen</span></div></div>
-          <div class="choice gray"><i class="choice-dot"></i><div><strong>Private Rente</strong><span>Persönlich vorsorgen</span></div></div>
-          <div class="mini-action">▣ &nbsp; Vergleich &nbsp; Optionen gegenüberstellen</div>
-          <div class="mini-action">▢ &nbsp; Beratungsmodus &nbsp; Für Kundengespräche</div>
-          <div class="tabbar"><span>Start</span><span>Rechner</span><span>Vergleich</span><span>Mehr</span></div>
-        </div>
-      </div>
+    <div class="hero-reference" aria-label="AVDepot auf iPhone und iPad">
+      <img src="assets/hero-approved-upload.jpg" alt="AVDepot auf iPhone und iPad">
     </div>
   </div>
 </section>
