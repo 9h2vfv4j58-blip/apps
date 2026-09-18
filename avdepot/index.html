@@ -71,7 +71,7 @@ header{height:64px;background:#fff;border-bottom:1px solid #edf0f2;position:stic
   display:inline-flex;align-items:center;gap:12px;background:var(--navy);color:#fff;
   border-radius:9px;padding:11px 18px;text-decoration:none;box-shadow:0 8px 22px rgba(8,34,52,.12)
 }
-.apple{font-size:1.7rem;line-height:1}
+.apple{font-size:1.7rem;line-height:1;color:#35b86b}
 .app-btn b{display:block;font-size:.98rem}
 .app-btn small{display:block;font-size:.71rem;font-weight:500;opacity:.88;margin-top:1px}
 
@@ -155,6 +155,22 @@ header{height:64px;background:#fff;border-bottom:1px solid #edf0f2;position:stic
 .price{margin-top:auto;padding-top:23px;color:var(--navy);font-size:1.8rem;font-weight:800}
 .price small{display:block;font-size:.72rem;color:#667b8a;font-weight:500;margin-top:0}
 .pro .price{font-size:1rem}.pro .price small{margin-top:4px}
+
+.comparison{padding:8px 0 50px;background:#fff}
+.comparison-card{border:1px solid #dbe3e8;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 10px 26px rgba(20,45,62,.05)}
+.comparison-head{padding:24px 26px 18px;border-bottom:1px solid #e4eaee;background:#fbfcfd}
+.comparison-head h2{margin:0 0 6px;color:var(--navy);font-size:1.65rem;letter-spacing:-.03em}
+.comparison-head p{margin:0;color:#617788;font-size:.86rem}
+.comparison-table{width:100%;border-collapse:collapse}
+.comparison-table th,.comparison-table td{padding:14px 18px;border-bottom:1px solid #e8edf0;text-align:center;font-size:.82rem}
+.comparison-table th:first-child,.comparison-table td:first-child{text-align:left;width:52%;color:#324b5c}
+.comparison-table th{background:#f7f9fa;color:var(--navy);font-weight:750}
+.comparison-table th.pro-col{background:#fbf6e9}
+.comparison-table tr:last-child td{border-bottom:0}
+.check{color:#168b58;font-weight:800}
+.dash{color:#9aa7b0}
+.price-cell{font-weight:800;color:var(--navy)}
+.comparison-note{padding:13px 18px;background:#fafbfc;border-top:1px solid #edf0f2;color:#71818d;font-size:.72rem}
 
 .screenshots{padding:48px 0 52px;background:var(--off);border-top:1px solid #edf0f2}
 .section-head{text-align:center;max-width:720px;margin:0 auto 28px}
@@ -267,6 +283,9 @@ footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
   .scenic-copy{padding:34px 22px}
   .photo-caption{font-size:1.35rem;left:24px}
   .pricing-grid{grid-template-columns:1fr}
+  .comparison{padding-bottom:38px}
+  .comparison-card{overflow-x:auto}
+  .comparison-table{min-width:620px}
   .pricing{padding-top:34px}
   .shot-grid{grid-template-columns:1fr}
   .shot-frame img{width:220px}
@@ -342,7 +361,7 @@ footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
         <li>Pro mit erweiterten Analysen und zusätzlichen Optionen</li>
         <li>Einmalige Freischaltung – kein Abo</li>
       </ul>
-      <a class="cream-btn" href="#faq">Funktionen im Detail</a>
+      <a class="cream-btn" href="#basic-pro-vergleich">Funktionen im Detail</a>
     </div>
     <article class="plan">
       <h3>AVDepot Basic</h3>
@@ -366,6 +385,38 @@ footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
       </ul>
       <div class="price">Einmalig freischalten<small>Kein Abo. Keine laufenden Kosten.</small></div>
     </article>
+  </div>
+</section>
+
+<section class="comparison" id="basic-pro-vergleich">
+  <div class="wrap">
+    <div class="comparison-card">
+      <div class="comparison-head">
+        <h2>Basic und Pro im direkten Vergleich.</h2>
+        <p>Alle wesentlichen Unterschiede der beiden Versionen auf einen Blick.</p>
+      </div>
+      <table class="comparison-table" aria-label="Vergleich AVDepot Basic und Pro">
+        <thead>
+          <tr><th>Funktion</th><th>Basic</th><th class="pro-col">Pro</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Altersvorsorgedepot-Rechner</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Vergleich mit Basisrente und fondsgebundener Privatrente</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Zentrale Grundanalyse</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Nominale Ergebnisdarstellung</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Erweiterte Analyse und zusätzliche Detailwerte</td><td class="dash">–</td><td class="check">✓</td></tr>
+          <tr><td>Zusätzliche Szenarien und Individualisierung</td><td class="dash">–</td><td class="check">✓</td></tr>
+          <tr><td>Erweiterte Eingaben und Annahmen</td><td class="dash">–</td><td class="check">✓</td></tr>
+          <tr><td>Renten-Ziel / Versorgungslücke</td><td class="dash">–</td><td class="check">✓</td></tr>
+          <tr><td>Begriffs- und Detailinformationen</td><td class="dash">–</td><td class="check">✓</td></tr>
+          <tr><td>Erweiterte Berichte und PDF-Varianten</td><td class="dash">–</td><td class="check">✓</td></tr>
+          <tr><td>iPad-Beratungsmodus</td><td class="dash">–</td><td class="check">✓</td></tr>
+          <tr><td>Kundenpräsentation auf dem iPad</td><td class="dash">–</td><td class="check">✓</td></tr>
+          <tr><td>Preis</td><td class="price-cell">0 €</td><td class="price-cell">14,99 € einmalig</td></tr>
+        </tbody>
+      </table>
+      <div class="comparison-note">AVDepot Pro wird einmalig freigeschaltet. Kein Abo und keine laufenden Kosten.</div>
+    </div>
   </div>
 </section>
 
