@@ -75,14 +75,15 @@ header{height:64px;background:#fff;border-bottom:1px solid #edf0f2;position:stic
 .app-btn b{display:block;font-size:.98rem}
 .app-btn small{display:block;font-size:.71rem;font-weight:500;opacity:.88;margin-top:1px}
 
-/* hero device mockups — iPad kept close to a real landscape tablet proportion */
+/* hero device mockups — proportions matched to the approved hero reference */
 .devices{position:relative;height:370px;align-self:end;margin-top:18px}
 .ipad{
-  position:absolute;right:0;bottom:0;width:min(56vw,520px);height:350px;
-  background:#111;border:3px solid #252525;border-radius:30px;
-  box-shadow:0 28px 45px rgba(20,31,39,.28);padding:12px;transform:perspective(1200px) rotateY(-1deg)
+  position:absolute;right:0;bottom:0;width:min(52vw,500px);height:365px;
+  background:#111;border:3px solid #252525;border-radius:31px;
+  box-shadow:0 28px 45px rgba(20,31,39,.28);padding:11px;transform:none
 }
-.ipad-screen{height:100%;background:#fafbfc;border-radius:19px;padding:17px 20px;overflow:hidden}
+.ipad-screen{height:100%;background:#fafbfc;border-radius:20px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ipad-screen .hero-ipad-image{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .screen-top{display:flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:700;color:#243747;margin-bottom:12px}
 .segment{height:26px;background:#eef2f4;border-radius:7px;display:grid;grid-template-columns:1fr 1fr;align-items:center;text-align:center;font-size:.56rem;color:#566876;margin-bottom:15px}
 .segment span:first-child{background:#e2e8ec;border-radius:6px;height:22px;display:grid;place-items:center;color:#1f4159}
@@ -93,7 +94,7 @@ header{height:64px;background:#fff;border-bottom:1px solid #edf0f2;position:stic
 .legend{display:flex;gap:20px;justify-content:center;margin-top:10px;font-size:.55rem;color:#627482}
 .legend i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:5px;vertical-align:-1px}
 .phone{
-  position:absolute;left:0;bottom:0;width:155px;height:300px;background:#0c0d0e;border:3px solid #222;
+  position:absolute;left:8px;bottom:0;width:150px;height:305px;background:#0c0d0e;border:3px solid #222;
   border-radius:29px;padding:8px;box-shadow:0 24px 38px rgba(20,31,39,.30);z-index:5
 }
 .phone-screen{height:100%;background:#fbfcfd;border-radius:21px;padding:28px 11px 10px;position:relative;overflow:hidden}
@@ -222,7 +223,7 @@ footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
   .hero-grid{grid-template-columns:1fr;min-height:auto;padding-top:15px}
   .hero-copy{padding:34px 0 4px}
   .devices{height:350px;max-width:720px;width:100%;margin:0 auto}
-  .ipad{width:74%;height:320px}
+  .ipad{width:70%;height:330px}
   .benefit-grid{grid-template-columns:repeat(2,1fr)}
   .scenic{grid-template-columns:1fr}
   .scenic-photo{min-height:300px}
@@ -242,10 +243,10 @@ footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
   .hero h1{font-size:2.55rem}
   .hero-copy{padding-top:28px}
   .devices{height:290px}
-  .ipad{width:82%;height:245px;right:-5px;border-radius:24px;padding:9px}
-  .ipad-screen{padding:11px 12px;border-radius:15px}
+  .ipad{width:78%;height:250px;right:-5px;border-radius:24px;padding:8px}
+  .ipad-screen{border-radius:15px}
   .chart{height:130px}
-  .phone{width:122px;height:242px;left:-2px}
+  .phone{width:118px;height:242px;left:-2px}
   .benefit-grid{grid-template-columns:1fr 1fr;min-height:auto;padding:12px 0}
   .benefit{padding:14px 4px}
   .icon-circle{width:45px;height:45px}
@@ -293,20 +294,7 @@ footer{height:auto;background:#fff;border-top:1px solid #eef1f3}
     <div class="devices" aria-label="AVDepot auf iPhone und iPad">
       <div class="ipad">
         <div class="ipad-screen">
-          <div class="screen-top" style="justify-content:space-between;align-items:flex-start;margin-bottom:8px">
-            <span style="display:block;text-align:left"><strong style="display:block;font-size:.88rem;line-height:1.1;color:#17304a">Vermögensentwicklung</strong><small style="display:block;font-size:.47rem;font-weight:500;color:#6a7c8a;margin-top:2px">Altersvorsorgedepot inkl. Förderung und Kapitalentwicklung</small></span>
-            <span style="display:block;text-align:right"><strong style="display:block;font-size:.9rem;line-height:1;color:#17304a">525.312 €</strong><small style="display:block;font-size:.48rem;font-weight:500;color:#6a7c8a;margin-top:3px">mit 67</small></span>
-          </div>
-          <div class="segment" style="margin-bottom:12px"><span>Nominal</span><span>Heutige Kaufkraft</span></div>
-          <div class="chart" style="height:170px;margin-left:18px;overflow:hidden">
-            <svg viewBox="0 0 500 170" preserveAspectRatio="none" aria-hidden="true">
-              <defs><linearGradient id="heroWealthFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2463a5" stop-opacity=".16"/><stop offset="100%" stop-color="#2463a5" stop-opacity="0"/></linearGradient></defs>
-              <path d="M0 162 C60 157 118 147 174 133 C235 118 292 99 346 78 C406 55 454 31 500 10 L500 170 L0 170 Z" fill="url(#heroWealthFill)"/>
-              <path d="M0 162 C60 157 118 147 174 133 C235 118 292 99 346 78 C406 55 454 31 500 10" fill="none" stroke="#2463a5" stroke-width="4"/>
-              <path d="M0 162 C80 155 160 145 240 133 C330 120 418 105 500 92" fill="none" stroke="#98a9ba" stroke-width="2.5" stroke-dasharray="8 6"/>
-            </svg>
-          </div>
-          <div class="legend" style="gap:16px;margin-top:8px"><span><i style="background:#2463a5"></i>Modellvermögen</span><span><i style="background:#98a9ba"></i>Eigene Einzahlungen</span></div>
+          <img class="hero-ipad-image" src="assets/pro-ipad-beratung.jpg" alt="AVDepot Pro auf dem iPad">
         </div>
       </div>
       <div class="phone">
