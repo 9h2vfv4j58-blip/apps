@@ -1,0 +1,21 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="description" content="Kontaktformular für die Apps von Lukas Marcisz"><title>Kontakt – Apps von Lukas Marcisz</title><link rel="stylesheet" href="../assets/style.css"><style>
+.contact-form{max-width:760px;display:grid;gap:16px;margin-top:24px}
+.contact-form label{display:grid;gap:7px;font-weight:700}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;box-sizing:border-box;border:1px solid #ccd6dc;border-radius:12px;padding:12px 14px;font:inherit;background:Canvas;color:CanvasText}
+.contact-form textarea{min-height:180px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-form button{justify-self:start;border:0;border-radius:12px;padding:12px 18px;font:inherit;font-weight:800;background:#0b5bd3;color:#fff;cursor:pointer}
+.form-note{font-size:.9rem;color:#617788;line-height:1.5}
+@media(max-width:650px){.form-row{grid-template-columns:1fr}}
+</style></head><body><header><div class="wrap"><nav><a class="brand" href="../">Apps von Lukas Marcisz</a><div class="navlinks"><a href="../avdepot/">AVDepot</a><a href="../fahrtenpro/">FahrtenPro</a><a href="../myrentoffice/">My Rent Office</a><a href="../scantoemail/">ScanToEmail</a><a href="../impressum/">Impressum</a></div></nav></div></header><main><div class="wrap"><div class="prose"><h1>Kontakt</h1><p>Nutze das Formular für Fragen zu AVDepot, FahrtenPro, My Rent Office, ScanToEmail oder zu einem allgemeinen Anliegen.</p><div class="notice"><strong>Datenschutzfreundlich:</strong> Die Eingaben werden auf dieser Website nicht gespeichert und nicht an einen externen Formulardienst übertragen. Beim Absenden öffnet sich die auf deinem Gerät eingerichtete E-Mail-App mit einer vorbereiteten Nachricht an <a href="mailto:luma.apps@icloud.com">luma.apps@icloud.com</a>. Erst wenn du die E-Mail dort sendest, werden die Angaben über deinen E-Mail-Anbieter übertragen.</div><form class="contact-form" id="contactForm"><div class="form-row"><label>App / Thema<select id="app" required><option value="AVDepot">AVDepot</option><option value="FahrtenPro">FahrtenPro</option><option value="My Rent Office">My Rent Office</option><option value="ScanToEmail">ScanToEmail</option><option value="Allgemein">Allgemein</option></select></label><label>Name<input id="name" type="text" autocomplete="name" placeholder="Optional"></label></div><div class="form-row"><label>Antwort-E-Mail<input id="reply" type="email" autocomplete="email" placeholder="Optional"></label><label>Betreff<input id="subject" type="text" required placeholder="Worum geht es?"></label></div><label>Nachricht<textarea id="message" required placeholder="Deine Nachricht"></textarea></label><button type="submit">Nachricht vorbereiten</button><p class="form-note">Bitte keine sensiblen Finanz-, Gesundheits-, Mieter-, Fahrtenbuch- oder Vertragsdaten mitsenden, wenn sie für die Anfrage nicht erforderlich sind.</p></form></div></div></main><footer><div class="wrap"><div class="footerlinks"><a href="../datenschutz/">Datenschutz</a><a href="../impressum/">Impressum</a><a href="../kontakt/">Kontakt</a></div><p>© 2026 Lukas Marcisz</p></div></footer><script>
+(function(){
+ const params=new URLSearchParams(location.search); const requested=params.get("app"); const select=document.getElementById("app");
+ if(requested){ for(const o of select.options){ if(o.value.toLowerCase()===requested.toLowerCase()){select.value=o.value;break;} } }
+ document.getElementById("contactForm").addEventListener("submit",function(e){
+   e.preventDefault();
+   const app=select.value, name=document.getElementById("name").value.trim(), reply=document.getElementById("reply").value.trim(), subject=document.getElementById("subject").value.trim(), message=document.getElementById("message").value.trim();
+   const body=["App / Thema: "+app,name?"Name: "+name:"",reply?"Antwort-E-Mail: "+reply:"","",message].filter(Boolean).join("\n");
+   location.href="mailto:luma.apps@icloud.com?subject="+encodeURIComponent("["+app+"] "+subject)+"&body="+encodeURIComponent(body);
+ });
+})();
+</script></body></html>
