@@ -32,3 +32,6 @@
 .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:800px){.edition-comparison{padding-bottom:75px}.comparison-table th,.comparison-table td{padding:16px}.comparison-table .comparison-feature{width:52%}}
 @media(max-width:600px){.edition-comparison{padding-bottom:60px}.edition-comparison .center-heading{margin-bottom:26px}.comparison-card{border-radius:10px}.comparison-table{font-size:.875rem}.comparison-table .comparison-feature{width:48%}.comparison-table th,.comparison-table td{padding:14px 4px}.comparison-table th:first-child{padding-left:10px;padding-right:8px}.comparison-table .included{font-size:1.125rem}.comparison-table tfoot strong{font-size:1rem}.comparison-table tfoot small{font-size:.75rem}.comparison-note{font-size:.8125rem}}
+
+/* Four editions retain the existing card design. */
+.edition-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.edition-grid .button{margin-top:auto}.edition-grid .checks{flex:1}@media(max-width:600px){.edition-grid{grid-template-columns:1fr}}
