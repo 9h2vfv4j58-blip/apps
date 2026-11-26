@@ -35,3 +35,7 @@
 
 /* Four editions retain the existing card design. */
 .edition-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.edition-grid .button{margin-top:auto}.edition-grid .checks{flex:1}@media(max-width:600px){.edition-grid{grid-template-columns:1fr}}
+
+/* Keep the longer product headline within narrow mobile and desktop columns. */
+.hero h1{font-size:clamp(1.85rem,4.1vw,3.6rem);overflow-wrap:normal;letter-spacing:-.045em}
+@media(max-width:700px){.hero h1{font-size:clamp(1.65rem,7.5vw,3rem)}}
